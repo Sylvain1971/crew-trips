@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, use } from 'react'
 import { supabase } from '@/lib/supabase'
 import type { Trip, Membre } from '@/lib/types'
 import JoinScreen from './JoinScreen'
@@ -10,7 +10,8 @@ import Photos from './Photos'
 const ICONS:Record<string,string>={peche:'🎣',ski:'⛷',autre:'🏕'}
 type Tab='archive'|'live'|'photos'
 
-export default function TripPage({params}:{params:{code:string}}) {
+export default function TripPage({params: paramsPromise}:{params:Promise<{code:string}>}) {
+  const params = use(paramsPromise)
   const [trip, setTrip] = useState<Trip|null>(null)
   const [membre, setMembre] = useState<Membre|null>(null)
   const [loading, setLoading] = useState(true)
