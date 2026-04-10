@@ -21,7 +21,7 @@ export interface Message {
 }
 export interface Photo {
   id: string; trip_id: string; storage_path: string; url: string
-  caption?: string; taille_bytes?: number; membre_prenom?: string; created_at: string
+  caption?: string; taille_bytes?: number; membre_id?: string; membre_prenom?: string; created_at: string
 }
 export const LIMITE_BYTES = 1 * 1024 * 1024 * 1024
 export const CAT_ICONS: Record<string,string> = {
