@@ -1,7 +1,8 @@
 'use client'
 import { useEffect, useState, useRef } from 'react'
 import { supabase } from '@/lib/supabase'
-import { compressPhoto, formatBytes, storagePct, LIMITE_BYTES } from '@/lib/compress'
+import { compressPhoto, formatBytes, storagePct } from '@/lib/compress'
+import { LIMITE_BYTES } from '@/lib/types'
 import type { Photo, Membre } from '@/lib/types'
 
 export default function Photos({tripId,membre}:{tripId:string,membre:Membre}) {
